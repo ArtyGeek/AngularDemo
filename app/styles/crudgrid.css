@@ -1,0 +1,49 @@
+﻿table.crud-grid {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%; }
+  table.crud-grid thead {
+    background-color: #F0F0F0; }
+    table.crud-grid thead tr th {
+      border: 1px solid #ddd;
+      border-bottom: 2px solid #ddd;
+      padding: 5px 10px; }
+    table.crud-grid thead tr th:last-child {
+      width: 80px; }
+  table.crud-grid tbody tr td {
+    border: 1px solid #ddd;
+    padding: 5px 10px; }
+    table.crud-grid tbody tr td input {
+      width: 100%; }
+    table.crud-grid tbody tr td .not-editable {
+      border: none;
+      width: 100%;
+      background: transparent;
+      outline: none; }
+    table.crud-grid tbody tr td .checkbox {
+      position: relative;
+      width: 20px;
+      display: block;
+      margin: 0 auto; }
+      table.crud-grid tbody tr td .checkbox input[type=checkbox] {
+        margin: 0;
+        top: -6px; }
+      table.crud-grid tbody tr td .checkbox input[type=checkbox].not-editable {
+        cursor: default;
+        position: absolute;
+        visibility: hidden;
+        left: 0;
+        top: -7px; }
+      table.crud-grid tbody tr td .checkbox span {
+        position: absolute;
+        left: 2px;
+        top: -7px;
+        background-color: #FFFFFF; }
+  table.crud-grid tbody tr td:last-child span {
+    cursor: pointer;
+    padding: 0 5px; }
+  table.crud-grid tbody tr td:last-child span:last-child {
+    float: right; }
+  table.crud-grid tbody tr td:last-child span:hover, table.crud-grid tbody tr td:last-child span:active {
+    color: #ca0000; }
