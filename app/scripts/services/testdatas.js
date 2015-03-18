@@ -49,7 +49,7 @@ angular.module('crudGridApp')
 					Country: [
 					{
 						id: 1,
-						text: 'Ukrain'
+						text: 'Ukraine'
 					},
 					{
 						id: 2,

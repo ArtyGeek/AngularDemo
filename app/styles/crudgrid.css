@@ -40,6 +40,8 @@
         left: 2px;
         top: -7px;
         background-color: #FFFFFF; }
+    table.crud-grid tbody tr td select {
+      width: 100%; }
   table.crud-grid tbody tr td:last-child span {
     cursor: pointer;
     padding: 0 5px; }
