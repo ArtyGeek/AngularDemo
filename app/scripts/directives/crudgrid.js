@@ -11,7 +11,11 @@ angular.module('crudGridApp')
 		return {
 			templateUrl: '/views/crudgrid.html',
 			restrict: 'E',
-			link: function (scope, element, attrs) {
+			scope: {
+				formats: '=',
+				gridData: '='
+			},
+			link: function (scope) {
 				scope.disableEdit = true;
 			}
 		};

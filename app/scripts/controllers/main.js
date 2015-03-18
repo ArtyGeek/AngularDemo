@@ -8,10 +8,11 @@
  * Controller of the crudGridApp
  */
 angular.module('crudGridApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+	.controller('MainCtrl', ['$scope', 'getdata', function ($scope, getdata) {
+		getdata.getGridDataFormats().then(function (data) {
+			$scope.dataFormats = data;
+		});
+		getdata.getGridData().then(function (data) {
+			$scope.gridData = data;
+		});
+	}]);
