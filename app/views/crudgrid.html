@@ -11,7 +11,7 @@
 				<div ng-switch on="format.DataType">
 					<input ng-switch-when="0" ng-class="{'not-editable': disableEdit}" type="text" ng-model="item[format.Name]" ng-disabled="disableEdit" />
 
-					<input ng-switch-when="1" ng-class="{'not-editable': disableEdit}" type="text" ng-model="item[format.Name]" ng-disabled="disableEdit" />
+					<input ng-switch-when="1" ng-class="{'not-editable': disableEdit}" type="text" ng-disabled="disableEdit" datetimepicker="item[format.Name]" />
 
 					<input ng-switch-when="2" ng-class="{'not-editable': disableEdit}" type="number" ng-model="item[format.Name]" ng-disabled="disableEdit" />
 

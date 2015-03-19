@@ -7,16 +7,20 @@
  * # crudgrid
  */
 angular.module('crudGridApp')
-	.directive('crudgrid', function () {
-		return {
-			templateUrl: '/views/crudgrid.html',
-			restrict: 'E',
-			scope: {
-				formats: '=',
-				gridData: '='
-			},
-			link: function (scope) {
-				scope.disableEdit = true;
-			}
-		};
-	});
+	.directive('crudgrid', [
+		function() {
+			return {
+				templateUrl: '/views/crudgrid.html',
+				restrict: 'E',
+				scope: {
+					formats: '=',
+					gridData: '='
+				},
+				controller: function() {
+				},
+				link: function(scope) {
+					scope.disableEdit = true;
+				}
+			};
+		}
+	]);
