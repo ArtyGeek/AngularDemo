@@ -9,18 +9,18 @@
 		<tr ng-repeat="item in gridData">
 			<td ng-repeat="format in formats">
 				<div ng-switch on="format.DataType">
-					<input ng-switch-when="0" ng-class="{'not-editable': disableEdit}" type="text" ng-model="item[format.Name]" ng-disabled="disableEdit" />
+					<input ng-switch-when="0" ng-class="{'not-editable': disableEdit || format.disabled}" type="text" ng-model="item[format.Name]" ng-disabled="disableEdit || format.disabled" />
 
-					<input ng-switch-when="1" ng-class="{'not-editable': disableEdit}" type="text" ng-disabled="disableEdit" datetimepicker="item[format.Name]" />
+					<input ng-switch-when="1" ng-class="{'not-editable': disableEdit || format.disabled}" type="text" ng-disabled="disableEdit" datetimepicker="item[format.Name] || format.disabled" />
 
-					<input ng-switch-when="2" ng-class="{'not-editable': disableEdit}" type="number" ng-model="item[format.Name]" ng-disabled="disableEdit" />
+					<input ng-switch-when="2" ng-class="{'not-editable': disableEdit || format.disabled}" type="number" ng-model="item[format.Name]" ng-disabled="disableEdit || format.disabled" />
 
 					<div ng-switch-when="3" class="checkbox">
-						<input ng-class="{'not-editable': disableEdit}" type="checkbox" ng-model="item[format.Name]" ng-disabled="disableEdit" />
+						<input ng-class="{'not-editable': disableEdit || format.disabled}" type="checkbox" ng-model="item[format.Name]" ng-disabled="disableEdit || format.disabled" />
 						<span ng-show="item[format.Name] && disableEdit" class="glyphicon glyphicon-ok" aria-hidden="true"></span>
 					</div>
 
-					<select ng-switch-when="4" ng-class="{'not-editable': disableEdit}" ng-disabled="disableEdit">
+					<select ng-switch-when="4" ng-class="{'not-editable': disableEdit || format.disabled}" ng-disabled="disableEdit || format.disabled">
 						<option id="{{format.Name + option.id}}" ng-repeat="option in item[format.Name]">{{option.text}}</option>
 					</select>
 				</div>

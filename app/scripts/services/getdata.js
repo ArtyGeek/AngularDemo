@@ -9,14 +9,14 @@
  */
 angular.module('crudGridApp')
 	.service('getdata', [
-		'$http', '$q', function($http, $q) {
+		'$http', '$q', function ($http, $q) {
 			this.getGridDataFormats = function () {
 				var deffered = $q.defer();
 				$http.get('/getGridDataFormats').
-					success(function(data) {
+					success(function (data) {
 						deffered.resolve(data);
 					}).
-					error(function() {
+					error(function () {
 					});
 				return deffered.promise;
 			};

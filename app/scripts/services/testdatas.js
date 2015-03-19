@@ -36,15 +36,14 @@ angular.module('crudGridApp')
 					DataType: enums.DataTypes.Int,
 					IsRequired: false,
 					CalculateFrom: ['BirthDate'],
-					Calculate: function() {
-					}
+					Calculate: 'return (Date.now() - BirthDate) / (1000 * 60 * 60 * 24 * 365);'
 				}
 			];
 
 			this.data = [
 				{
 					Name: 'Name1',
-					BirthDate: new Date('06/02/2000'),
+					BirthDate: new Date('11/23/1986'),
 					Show: true,
 					Country: [
 					{

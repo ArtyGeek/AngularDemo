@@ -7,8 +7,8 @@
  * # crudgrid
  */
 angular.module('crudGridApp')
-	.directive('crudgrid', [
-		function() {
+	.directive('crudgrid', ['calculate',
+		function (calculate) {
 			return {
 				templateUrl: '/views/crudgrid.html',
 				restrict: 'E',
@@ -16,10 +16,11 @@ angular.module('crudGridApp')
 					formats: '=',
 					gridData: '='
 				},
-				controller: function() {
+				controller: function () {
 				},
-				link: function(scope) {
+				link: function (scope) {
 					scope.disableEdit = true;
+					calculate.calculate(scope.gridData, scope.formats);
 				}
 			};
 		}
