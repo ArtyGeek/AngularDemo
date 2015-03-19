@@ -12,6 +12,7 @@
     table.crud-grid thead tr th:last-child {
       width: 80px; }
   table.crud-grid tbody tr td {
+    overflow: hidden;
     border: 1px solid #ddd;
     padding: 5px 10px; }
     table.crud-grid tbody tr td input {
@@ -21,6 +22,15 @@
       width: 100%;
       background: transparent;
       outline: none; }
+    table.crud-grid tbody tr td select.not-editable {
+      border: none;
+      width: 140%;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      text-indent: 1px;
+      -ms-text-overflow: '';
+      -o-text-overflow: '';
+      text-overflow: ''; }
     table.crud-grid tbody tr td .checkbox {
       position: relative;
       width: 20px;
@@ -40,8 +50,6 @@
         left: 2px;
         top: -7px;
         background-color: #FFFFFF; }
-    table.crud-grid tbody tr td select {
-      width: 100%; }
   table.crud-grid tbody tr td:last-child span {
     cursor: pointer;
     padding: 0 5px; }

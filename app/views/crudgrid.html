@@ -20,7 +20,7 @@
 						<span ng-show="item[format.Name] && disableEdit" class="glyphicon glyphicon-ok" aria-hidden="true"></span>
 					</div>
 
-					<select ng-switch-when="4">
+					<select ng-switch-when="4" ng-class="{'not-editable': disableEdit}" ng-disabled="disableEdit">
 						<option id="{{format.Name + option.id}}" ng-repeat="option in item[format.Name]">{{option.text}}</option>
 					</select>
 				</div>
