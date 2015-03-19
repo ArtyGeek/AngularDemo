@@ -14,12 +14,30 @@ angular.module('crudGridApp')
 				scope: {
 					datetimepicker: '='
 				},
-				link: function(scope, element) {
+				link: function (scope, element) {
 					$timeout(function () {
 
+						var dateTimeFormat = {
+							date: 'DD/MM/YYYY',
+							time: 'h:mm',
+							dateTime: 'DD/MM/YYYY h:mm'
+						}
+
+						//re-define 2 methods for using moment
+						Date.parseDate = function (input, format) {
+							return window.moment(input, format).toDate();
+						};
+						Date.prototype.dateFormat = function (format) {
+							return window.moment(this).format(format);
+						};
+						//************************************
+
+						//initialize datetimepicker
 						element.datetimepicker({
-							value: new Date(scope.datetimepicker),
-							format: 'Y/m/d H:i'
+							value: window.moment(scope.datetimepicker).format(dateTimeFormat.dateTime),
+							format: dateTimeFormat.dateTime,
+							formatTime: dateTimeFormat.time,
+							formatDate: dateTimeFormat.date
 						});
 					});
 				}
