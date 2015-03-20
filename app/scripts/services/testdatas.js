@@ -36,14 +36,14 @@ angular.module('crudGridApp')
 					DataType: enums.DataTypes.Int,
 					IsRequired: false,
 					CalculateFrom: ['BirthDate'],
-					Calculate: 'return (Date.now() - BirthDate) / (1000 * 60 * 60 * 24 * 365);'
+					Calculate: 'var birthDate = new Date(BirthDate); return (Date.now() - birthDate) / (1000 * 60 * 60 * 24 * 365);'
 				}
 			];
 
 			this.data = [
 				{
 					Name: 'Name1',
-					BirthDate: new Date('11/23/1986'),
+					BirthDate: '1986-11-22T22:00:00.000Z',
 					Show: true,
 					Country: [
 					{
@@ -52,39 +52,87 @@ angular.module('crudGridApp')
 					},
 					{
 						id: 2,
-						text: 'Polish'
-					}],
-					Age: 22
+						text: 'Polish',
+						selected: true
+					},
+					{
+						id: 3,
+						text: 'Germany'
+					},
+					{
+						id: 4,
+						text: 'Scottish'
+					},
+					{
+						id: 5,
+						text: 'France'
+					},
+					{
+						id: 6,
+						text: 'Italy'
+					}]
 				},
 				{
 					Name: 'Name2',
-					BirthDate: new Date('12/03/2000'),
+					BirthDate: '1992-06-22T22:00:00.000Z',
 					Show: false,
 					Country: [
 					{
 						id: 1,
-						text: 'German'
+						text: 'Ukraine'
 					},
 					{
 						id: 2,
+						text: 'Polish'
+					},
+					{
+						id: 3,
+						text: 'Germany',
+						selected: true
+					},
+					{
+						id: 4,
 						text: 'Scottish'
-					}],
-					Age: 22
+					},
+					{
+						id: 5,
+						text: 'France'
+					},
+					{
+						id: 6,
+						text: 'Italy'
+					}]
 				},
 				{
 					Name: 'Name3',
-					BirthDate: new Date('07/01/2000'),
+					BirthDate: '1985-10-22T22:00:00.000Z',
 					Show: true,
 					Country: [
 					{
 						id: 1,
-						text: 'France'
+						text: 'Ukraine',
+						selected: true
 					},
 					{
 						id: 2,
+						text: 'Polish'
+					},
+					{
+						id: 3,
+						text: 'Germany'
+					},
+					{
+						id: 4,
+						text: 'Scottish'
+					},
+					{
+						id: 5,
+						text: 'France'
+					},
+					{
+						id: 6,
 						text: 'Italy'
-					}],
-					Age: 22
+					}]
 				}
 			];
 		}

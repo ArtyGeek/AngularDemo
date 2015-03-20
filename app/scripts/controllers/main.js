@@ -9,10 +9,14 @@
  */
 angular.module('crudGridApp')
 	.controller('MainCtrl', ['$scope', 'getdata', function ($scope, getdata) {
-		getdata.getGridDataFormats().then(function (data) {
-			$scope.dataFormats = data;
-		});
-		getdata.getGridData().then(function (data) {
-			$scope.gridData = data;
-		});
+
+		$scope.loadData = function () {
+			getdata.getGridDataFormats().then(function (data) {
+				$scope.dataFormats = data;
+			});
+
+			getdata.getGridData().then(function (data) {
+				$scope.gridData = data;
+			});
+		}
 	}]);

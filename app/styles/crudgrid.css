@@ -1,59 +1,81 @@
-﻿table.crud-grid {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  width: 100%; }
-  table.crud-grid thead {
-    background-color: #F0F0F0; }
-    table.crud-grid thead tr th {
+﻿.crud-grid-wrapper {
+  position: relative; }
+  .crud-grid-wrapper table.crud-grid {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 15px; }
+    .crud-grid-wrapper table.crud-grid thead {
+      background-color: #F0F0F0; }
+      .crud-grid-wrapper table.crud-grid thead tr th {
+        border: 1px solid #ddd;
+        border-bottom: 2px solid #ddd;
+        padding: 5px 10px; }
+      .crud-grid-wrapper table.crud-grid thead tr th:last-child {
+        width: 80px; }
+    .crud-grid-wrapper table.crud-grid tbody tr td {
+      overflow: hidden;
       border: 1px solid #ddd;
-      border-bottom: 2px solid #ddd;
       padding: 5px 10px; }
-    table.crud-grid thead tr th:last-child {
-      width: 80px; }
-  table.crud-grid tbody tr td {
-    overflow: hidden;
-    border: 1px solid #ddd;
-    padding: 5px 10px; }
-    table.crud-grid tbody tr td input {
-      width: 100%; }
-    table.crud-grid tbody tr td .not-editable {
-      border: none;
-      width: 100%;
-      background: transparent;
-      outline: none; }
-    table.crud-grid tbody tr td select.not-editable {
-      border: none;
-      width: 140%;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      text-indent: 1px;
-      -ms-text-overflow: '';
-      -o-text-overflow: '';
-      text-overflow: ''; }
-    table.crud-grid tbody tr td .checkbox {
-      position: relative;
-      width: 20px;
-      display: block;
-      margin: 0 auto; }
-      table.crud-grid tbody tr td .checkbox input[type=checkbox] {
-        margin: 0;
-        top: -6px; }
-      table.crud-grid tbody tr td .checkbox input[type=checkbox].not-editable {
-        cursor: default;
-        position: absolute;
-        visibility: hidden;
-        left: 0;
-        top: -7px; }
-      table.crud-grid tbody tr td .checkbox span {
-        position: absolute;
-        left: 2px;
-        top: -7px;
-        background-color: #FFFFFF; }
-  table.crud-grid tbody tr td:last-child span {
-    cursor: pointer;
-    padding: 0 5px; }
-  table.crud-grid tbody tr td:last-child span:last-child {
-    float: right; }
-  table.crud-grid tbody tr td:last-child span:hover, table.crud-grid tbody tr td:last-child span:active {
-    color: #ca0000; }
+      .crud-grid-wrapper table.crud-grid tbody tr td input {
+        width: 100%; }
+      .crud-grid-wrapper table.crud-grid tbody tr td .not-editable {
+        border: none;
+        width: 100%;
+        background: transparent;
+        outline: none; }
+      .crud-grid-wrapper table.crud-grid tbody tr td select.not-editable {
+        border: none;
+        width: 140%;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        text-indent: 1px;
+        -ms-text-overflow: '';
+        -o-text-overflow: '';
+        text-overflow: ''; }
+      .crud-grid-wrapper table.crud-grid tbody tr td .checkbox {
+        position: relative;
+        width: 20px;
+        display: block;
+        margin: 0 auto; }
+        .crud-grid-wrapper table.crud-grid tbody tr td .checkbox input[type=checkbox] {
+          margin: 0;
+          top: -6px; }
+        .crud-grid-wrapper table.crud-grid tbody tr td .checkbox input[type=checkbox].not-editable {
+          cursor: default;
+          position: absolute;
+          visibility: hidden;
+          left: 0;
+          top: -7px; }
+        .crud-grid-wrapper table.crud-grid tbody tr td .checkbox span {
+          position: absolute;
+          left: 2px;
+          top: -7px;
+          background-color: #FFFFFF; }
+    .crud-grid-wrapper table.crud-grid tbody tr td:last-child span {
+      cursor: pointer;
+      padding: 0 5px; }
+    .crud-grid-wrapper table.crud-grid tbody tr td:last-child span:last-child {
+      float: right; }
+    .crud-grid-wrapper table.crud-grid tbody tr td:last-child span:hover, .crud-grid-wrapper table.crud-grid tbody tr td:last-child span:active {
+      color: #ca0000; }
+  .crud-grid-wrapper .delete-row {
+    width: 160px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 35%;
+    z-index: 10;
+    text-align: center; }
+    .crud-grid-wrapper .delete-row a.alert-link {
+      padding: 0 15px;
+      cursor: pointer; }
+  .crud-grid-wrapper .gray-wall {
+    position: absolute;
+    width: 100%;
+    background-color: gray;
+    opacity: 0.5;
+    height: 100%;
+    top: 0; }
