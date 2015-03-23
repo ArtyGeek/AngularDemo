@@ -17,28 +17,58 @@ angular.module('crudGridApp')
 					gridData: '='
 				},
 				controller: function ($scope) {
-					var deleteIndex = '';
+					var editRow = false;
+					var editRowIndex;
+					var elemetCopy;
 
-					$scope.showDeletePopup = function (index) {
-						$scope.confirmDeletePopup = true;
-						deleteIndex = index;
+					$scope.editRow = function (index) {
+						if (editRow) return;
+						elemetCopy = window.angular.copy($scope.gridData[index]);
+						$scope.gridData[index].allowEdit = true;
+						editRow = true;
+						editRowIndex = index;
 					};
 
-					$scope.confirmDelete = function (action) {
-						if (action === 'Yes') {
-							$scope.gridData.splice(deleteIndex, 1);
-							postdata.save($scope.gridData);
+					$scope.cancelEdit = function () {
+						if (editRowIndex === $scope.gridData.length) {		//add new row canceled
+							$scope.gridData.pop();
+						} else {
+							$scope.gridData[editRowIndex].allowEdit = false;
+							$scope.gridData[editRowIndex] = elemetCopy;
 						}
-						$scope.confirmDeletePopup = false;
+						editRow = false;
+					};
+
+					$scope.deleteRow = function (index) {
+						if (editRow) return;
+						$scope.deleteRowIndex = index;
+						$('#confirmPopup').modal();
+					};
+
+					$scope.confirmDelete = function (deleteIndex) {
+						$scope.gridData.splice(deleteIndex, 1);
+						postdata.save($scope.gridData);
 					};
 
 					$scope.addNewRow = function () {
-						calculate.prepareNewRow($scope.gridData[0], $scope.formats);
-						//$scope.gridData.push();
+						if (editRow) return;
+						editRow = true;
+						var index = $scope.gridData.push(calculate.prepareNewRow($scope.formats));
+						$scope.gridData[index - 1].allowEdit = true;
+						editRowIndex = $scope.gridData.length;
+					};
+
+					$scope.dateChange = function (rowIndex) {
+						$scope.gridData[rowIndex] = calculate.calculateOne($scope.gridData[rowIndex], $scope.formats);
+					};
+
+					$scope.saveData = function (index) {
+						editRow = false;
+						$scope.gridData[index].allowEdit = false;
+						postdata.save($scope.gridData);
 					};
 				},
 				link: function (scope) {
-					scope.disableEdit = true;
 					calculate.calculate(scope.gridData, scope.formats);
 				}
 			};

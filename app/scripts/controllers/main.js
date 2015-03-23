@@ -18,5 +18,5 @@ angular.module('crudGridApp')
 			getdata.getGridData().then(function (data) {
 				$scope.gridData = data;
 			});
-		}
+		};
 	}]);

@@ -29,7 +29,32 @@ angular.module('crudGridApp')
 				{
 					Name: 'Country',
 					DataType: enums.DataTypes.PersistentEntity,
-					IsRequired: false
+					IsRequired: false,
+					Data: [
+					{
+						id: 1,
+						text: 'Ukraine'
+					},
+					{
+						id: 2,
+						text: 'Poland'
+					},
+					{
+						id: 3,
+						text: 'Germany'
+					},
+					{
+						id: 4,
+						text: 'Scottish'
+					},
+					{
+						id: 5,
+						text: 'France'
+					},
+					{
+						id: 6,
+						text: 'Italy'
+					}]
 				},
 				{
 					Name: 'Age',
@@ -45,94 +70,19 @@ angular.module('crudGridApp')
 					Name: 'Name1',
 					BirthDate: '1986-11-22T22:00:00.000Z',
 					Show: true,
-					Country: [
-					{
-						id: 1,
-						text: 'Ukraine'
-					},
-					{
-						id: 2,
-						text: 'Polish',
-						selected: true
-					},
-					{
-						id: 3,
-						text: 'Germany'
-					},
-					{
-						id: 4,
-						text: 'Scottish'
-					},
-					{
-						id: 5,
-						text: 'France'
-					},
-					{
-						id: 6,
-						text: 'Italy'
-					}]
+					Country: 2
 				},
 				{
 					Name: 'Name2',
 					BirthDate: '1992-06-22T22:00:00.000Z',
 					Show: false,
-					Country: [
-					{
-						id: 1,
-						text: 'Ukraine'
-					},
-					{
-						id: 2,
-						text: 'Polish'
-					},
-					{
-						id: 3,
-						text: 'Germany',
-						selected: true
-					},
-					{
-						id: 4,
-						text: 'Scottish'
-					},
-					{
-						id: 5,
-						text: 'France'
-					},
-					{
-						id: 6,
-						text: 'Italy'
-					}]
+					Country: 1
 				},
 				{
 					Name: 'Name3',
 					BirthDate: '1985-10-22T22:00:00.000Z',
 					Show: true,
-					Country: [
-					{
-						id: 1,
-						text: 'Ukraine',
-						selected: true
-					},
-					{
-						id: 2,
-						text: 'Polish'
-					},
-					{
-						id: 3,
-						text: 'Germany'
-					},
-					{
-						id: 4,
-						text: 'Scottish'
-					},
-					{
-						id: 5,
-						text: 'France'
-					},
-					{
-						id: 6,
-						text: 'Italy'
-					}]
+					Country: 3
 				}
 			];
 		}
