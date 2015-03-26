@@ -7,8 +7,8 @@
  * # crudgrid
  */
 angular.module('crudGridApp')
-	.directive('crudgrid', ['calculate', 'postdata',
-		function (calculate, postdata) {
+	.directive('crudgrid', ['calculate', 'postdata', 'validation',
+		function (calculate, postdata, validation) {
 			return {
 				templateUrl: '/views/crudgrid.html',
 				restrict: 'E',
@@ -22,7 +22,7 @@ angular.module('crudGridApp')
 					var elemetCopy;
 
 					$scope.editRow = function (index) {
-						if (editRow) return;
+						if (editRow) { return; }
 						elemetCopy = window.angular.copy($scope.gridData[index]);
 						$scope.gridData[index].allowEdit = true;
 						editRow = true;
@@ -40,7 +40,7 @@ angular.module('crudGridApp')
 					};
 
 					$scope.deleteRow = function (index) {
-						if (editRow) return;
+						if (editRow) { return; }
 						$scope.deleteRowIndex = index;
 						$('#confirmPopup').modal();
 					};
@@ -51,7 +51,7 @@ angular.module('crudGridApp')
 					};
 
 					$scope.addNewRow = function () {
-						if (editRow) return;
+						if (editRow) { return; }
 						editRow = true;
 						var index = $scope.gridData.push(calculate.prepareNewRow($scope.formats));
 						$scope.gridData[index - 1].allowEdit = true;
@@ -63,6 +63,7 @@ angular.module('crudGridApp')
 					};
 
 					$scope.saveData = function (index) {
+						if (!validation.validate($scope.gridData[index], $scope.formats)) { return; }
 						editRow = false;
 						$scope.gridData[index].allowEdit = false;
 						postdata.save($scope.gridData);

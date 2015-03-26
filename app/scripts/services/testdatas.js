@@ -19,7 +19,7 @@ angular.module('crudGridApp')
 				{
 					Name: 'BirthDate',
 					DataType: enums.DataTypes.Date,
-					IsRequired: false
+					IsRequired: true
 				},
 				{
 					Name: 'Show',
@@ -45,7 +45,7 @@ angular.module('crudGridApp')
 					},
 					{
 						id: 4,
-						text: 'Scottish'
+						text: 'Sweden'
 					},
 					{
 						id: 5,
@@ -61,7 +61,9 @@ angular.module('crudGridApp')
 					DataType: enums.DataTypes.Int,
 					IsRequired: false,
 					CalculateFrom: ['BirthDate'],
-					Calculate: 'var birthDate = new Date(BirthDate); return (Date.now() - birthDate) / (1000 * 60 * 60 * 24 * 365);'
+					Calculate: 'var birthDate = new Date(BirthDate); ' +
+						'var age = (Date.now() - birthDate) / (1000 * 60 * 60 * 24 * 365);' +
+						'return parseFloat(age.toFixed(2));'
 				}
 			];
 

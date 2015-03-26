@@ -94,6 +94,16 @@
 					span:hover, span:active {
 						color: #ca0000;
 					}
+
+					button {
+						border: none;
+						background: none;
+						outline: none;
+					}
+
+					button:hover {
+						color: #ca0000;
+					}
 				}
 			}
 		}

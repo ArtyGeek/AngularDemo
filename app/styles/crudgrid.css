@@ -60,6 +60,12 @@
       float: right; }
     .crud-grid-wrapper table.crud-grid tbody tr td:last-child span:hover, .crud-grid-wrapper table.crud-grid tbody tr td:last-child span:active {
       color: #ca0000; }
+    .crud-grid-wrapper table.crud-grid tbody tr td:last-child button {
+      border: none;
+      background: none;
+      outline: none; }
+    .crud-grid-wrapper table.crud-grid tbody tr td:last-child button:hover {
+      color: #ca0000; }
   .crud-grid-wrapper .delete-row {
     width: 160px;
     position: absolute;
