@@ -3,3 +3,28 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 
+.content{
+	padding-top: 50px;
+}
+
+table.crud-grid{
+	thead{
+		tr{
+			th:nth-child(2){
+				width: 20%;
+			}
+
+			th:nth-child(3){
+				width: 10%;
+			}
+
+			th:nth-child(4){
+				width: 15%;
+			}
+
+			th:nth-child(5){
+				width: 12%;
+			}
+		}
+	}
+}
